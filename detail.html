@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>详细资料</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link href="css/detail.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/jiugongge.css"/>
+
+</head>
+<body>
+
+<!--
+
+ * 17素材vip建站专区模块代码
+ * 详尽信息请看官网：http://www.17sucai.com/pins/vip
+ *
+ * Copyright , 温州易站网络科技有限公司版权所有
+ *
+ * 请尊重原创，未经允许请勿转载。
+ * 在保留版权的前提下可应用于个人或商业用途
+
+-->
+
+<section class="aui-flexView">
+    <header class="aui-navBar aui-navBar-fixed">
+        <a href="javascript:;" class="aui-navBar-item">
+            <i class="icon icon-return"></i>
+        </a>
+        <div class="aui-center" style="margin-left:1%">
+            <span class="aui-center-title">详细资料</span>
+        </div>
+        <a href="javascript:;" class="aui-navBar-item">
+            <i class="icon icon-sys"></i>
+        </a>
+    </header>
+    <section class="aui-scrollView">
+        <div class="aui-datum-box">
+            <div class="aui-datum-box-img">
+                <img src="images/user-logo-001.png" alt="">
+            </div>
+            <h2>李嘉桦 <em><img src="images/icon-bu-008.png" alt=""></em></h2>
+        </div>
+        <div class="aui-datum-list">
+            <div class="aui-flex">
+                <div class="aui-datum-icon">
+                    <img src="images/phone.png" alt="">
+                </div>
+                <div class="aui-flex-box">
+                    <h3><b>联系电话</b></h3>
+                </div>
+            </div>
+            <div class="aui-flex aui-flex-open">
+
+                <div class="aui-flex-box">
+                    <h3>13953066841</h3>
+                </div>
+            </div>
+            <div class="aui-flex">
+                <div class="aui-datum-icon">
+                    <img src="images/leibie.png" alt="">
+                </div>
+                <div class="aui-flex-box">
+                    <h3><b>问题分类</b></h3>
+                </div>
+            </div>
+            <div class="aui-flex aui-flex-open">
+
+                <div class="aui-flex-box">
+                    <h3>情感类</h3>
+                </div>
+            </div>
+            <div class="aui-flex">
+                <div class="aui-datum-icon">
+                    <img src="images/hunyintype.png" alt="">
+                </div>
+                <div class="aui-flex-box">
+                    <h3><b>婚姻状况</b></h3>
+                </div>
+            </div>
+            <div class="aui-flex aui-flex-open">
+
+                <div class="aui-flex-box">
+                    <h3>未婚</h3>
+                </div>
+            </div>
+            <div class="aui-flex">
+                <div class="aui-datum-icon">
+                    <img src="images/haizi.png" alt="">
+                </div>
+                <div class="aui-flex-box">
+                    <h3><b>子女数量</b></h3>
+                </div>
+            </div>
+            <div class="aui-flex aui-flex-open">
+
+                <div class="aui-flex-box">
+                    <h3>1</h3>
+                </div>
+            </div>
+            <div class="aui-flex">
+                <div class="aui-datum-icon">
+                    <img src="images/buchong.png" alt="">
+                </div>
+                <div class="aui-flex-box">
+                    <h3><b>补充信息</b></h3>
+                </div>
+            </div>
+            <div class="aui-flex aui-flex-open">
+
+                <div class="aui-flex-box">
+                    <p>努力工作！只是为了将来的自己成为儿女心中的英雄，！！1、文学咨询-- 咨询医生，http://www.a-ui.cn 语音咨询，http://www.yu.com 不接受任何的软文发布，线上医学交流</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="cubes" id="cubeBox"></div>
+        </div>
+
+    </section>
+</section>
+<script>
+    var number = "19950808404";
+    var json = [
+        {"key":1, "num":1},
+        {"key":4, "num":2},
+        {"key":5, "num":1},
+        {"key":8, "num":2},
+        {"key":9, "num":2}
+    ];
+
+
+
+
+    var cubeBox = document.getElementById("cubeBox");
+    var cubes = cubeBox.getElementsByTagName("div"),
+        colorArr = ["#096", "green", "pink", "blue", "#369", "purple", "yellow", "#ccc", "#000"];
+    var str = "",timer = null, flag = false;
+   for(var p= 1;p<=9;p++){
+       if(number.indexOf(p)== -1){
+           str += "<div><p class='num'>"+p+"</p></div>"
+       }else {
+           for (var i in json) {
+               switch (json[i].key) {
+                   case p:
+                       str += "<div><p class='divright'>" + json[i].num + "</p><p class='num'>" + json[i].key + "</p></div>";
+                       break;
+               }
+           }
+
+       }
+
+
+    }
+
+    // 动态添加9个div 创建九宫格
+    // for (var i = 1; i <=9; i++) {
+    //     for(var i = 0;i<json.length;i++){
+    //         for(var key in json[i]){
+    //             if(json[i][key]=="0"){
+    //                 str += "<div><p class='num'>"+key+"</p></div>"
+    //             }else{
+    //                 str += "<div><p class='divright'>"+json[i][key]+"</p><p class='num'>"+key+"</p></div>"
+    //             }
+    //         }
+    //     }
+    // }
+    cubeBox.innerHTML = str;
+
+</script>
+</body>
+</html>
